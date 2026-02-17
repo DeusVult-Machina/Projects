@@ -1,6 +1,6 @@
-# Java Projects – Jihad Cooper
+# Projects – Jihad Cooper
 
-This repository contains Java projects demonstrating core programming concepts and problem-solving ability.
+This repository contains computer projects demonstrating core programming concepts and problem-solving ability.
 
 ## Skills Demonstrated
 - Object-Oriented Programming
