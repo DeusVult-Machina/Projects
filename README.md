@@ -17,4 +17,7 @@ Console-based Wordle game with input validation and game loop logic.
 ### Active Directory Home Lab
 Windows Server Active Directory domain built and managed in a virtualized home lab environment.
 
+### Computer Assembly
+Assembled my own personal computer using bought hardware and tools.
+
 More projects coming soon.
