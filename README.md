@@ -14,7 +14,7 @@ This repository contains computer projects demonstrating core programming concep
 ### Active Directory Home Lab
 Windows Server Active Directory domain built and managed in a virtualized home lab environment.
 
-### Computer Assembly
-Assembled my own personal computer using bought hardware and tools.
+### Laptop Assembly
+Assembled my own personal laptop using bought hardware and tools.
 
 More projects coming soon.
