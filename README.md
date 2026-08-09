@@ -11,9 +11,6 @@ This repository contains computer projects demonstrating core programming concep
 
 ## Projects
 
-### Chat-bot
-Console-based Wordle game with input validation and game loop logic.
-
 ### Active Directory Home Lab
 Windows Server Active Directory domain built and managed in a virtualized home lab environment.
 
