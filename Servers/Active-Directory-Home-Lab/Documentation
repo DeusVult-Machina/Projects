@@ -156,3 +156,12 @@ Typo in the originally entered configuration. Checked DNS alongside the IPv4 bef
 Active Directory depends heavily on correctly configured DNS, and
 domain authentication problems can originate from DNS rather than
 from Active Directory itself.
+
+### Problem 
+Windows 11 could ping the domain controller but DNS queries timed out.
+
+### Investigation 
+Verified DNS service, AD-integrated DNS zone, port 53 listeners, and network connectivity.
+
+### Resolution
+Added inbound firewall rules permitting TCP/UDP DNS traffic on port 53.
