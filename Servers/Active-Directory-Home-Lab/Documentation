@@ -1,1 +1,158 @@
+# Active Directory Security Lab
 
+## 1. Project Overview
+
+This project is a personal cybersecurity home lab designed to provide hands-on experience with Windows Server administration, Active Directory, DNS, Group Policy, Windows client management, and security monitoring.
+
+The goal is to build a small simulated corporate environment that can later be used to practice security investigations and incident response.
+
+## 2. Lab Environment
+
+### Current Components
+
+* Windows Server 2025
+* Windows 11 client virtual machine
+* Active Directory Domain Services (AD DS)
+* DNS
+* Group Policy
+* Virtualized lab environment
+
+### Domain
+
+```text
+homelab.local
+```
+
+### Planned Lab Structure
+
+```text
+homelab.local
+│
+├── Users
+├── Groups
+├── Workstations
+└── Servers
+```
+
+## 3. Windows Server Configuration
+
+Windows Server 2025 was installed as the server operating system for the lab.
+
+The server was configured with a static IPv4 address to provide a consistent address for Active Directory and DNS services.
+
+### Network Configuration
+
+| Setting         | Configuration |
+| --------------- | ------------- |
+| IPv4 Address    | 10.0.2.10     |
+| Subnet Mask     | 255.255.255.0 |
+| Default Gateway | 10.0.2.2      |
+| Preferred DNS   | 10.0.2.10     |
+
+The server uses itself as the preferred DNS server because DNS is required for Active Directory domain services.
+
+## 4. Active Directory Domain Services
+
+Active Directory Domain Services was installed on the Windows Server 2025 virtual machine.
+
+The server was subsequently promoted to a domain controller for:
+
+```text
+homelab.local
+```
+
+This provides centralized identity and authentication services for the lab environment.
+
+### Current Status
+
+* [x] Windows Server 2025 installed
+* [x] Static IPv4 configured
+* [x] AD DS installed
+* [x] DNS installed
+* [x] Domain controller configured
+* [x] `homelab.local` domain created
+* [ ] Organizational Units created
+* [ ] User accounts created
+* [ ] Security groups created
+* [ ] Windows 11 client joined to domain
+* [ ] Security monitoring configured
+* [ ] Security investigations completed
+
+## 5. DNS Configuration
+
+DNS was configured as part of the Active Directory deployment.
+
+The lab uses the Windows Server domain controller as its internal DNS server.
+
+DNS is important to the lab because Active Directory relies on DNS to locate domain controllers and other domain services.
+
+## 6. Security Configuration
+
+The next phase of the project will focus on implementing security controls through Group Policy.
+
+Planned controls include:
+
+* Password complexity requirements
+* Minimum password length
+* Account lockout threshold
+* Account lockout duration
+* Password-related security policies
+* Restrictions on unnecessary administrative privileges
+
+A dedicated security policy GPO will be used rather than modifying the default domain policy unnecessarily.
+
+## 7. Testing Plan
+
+After the Windows 11 client is joined to the domain, the environment will be tested using normal user and administrative accounts.
+
+Planned tests include:
+
+1. Authenticate a domain user.
+2. Verify the domain membership of the Windows 11 client.
+3. Test Group Policy application.
+4. Generate failed authentication attempts.
+5. Investigate Windows security events.
+6. Test account lockout behavior.
+7. Review authentication logs.
+8. Document findings and remediation steps.
+
+## 8. Future Security Monitoring
+
+Future development of the lab will introduce security monitoring and logging capabilities.
+
+Potential areas of investigation include:
+
+* Failed login attempts
+* Account lockouts
+* New user accounts
+* Privilege changes
+* Suspicious processes
+* Network connections
+* Authentication activity
+
+The objective is to use the environment as a small-scale SOC practice environment rather than simply an Active Directory administration exercise.
+
+## 9. Lessons Learned
+
+This project is being documented as it is built. Each configuration change and troubleshooting step will be recorded along with the reasoning behind the change.
+
+The project is intended to demonstrate practical understanding rather than simply listing technologies on a resume.
+
+## Troubleshooting: DNS / Domain Resolution
+
+### Problem
+The domain environment was not resolving as expected.
+
+### Investigation
+- Checked IPv4 configuration
+- Verified DNS server configuration
+- Tested name resolution with nslookup
+- Checked the Active Directory DNS zone
+
+### Resolution
+Typo in the originally entered configuration. Checked DNS alongside the IPv4 before restarting the VM to ensure congruenceny.
+
+### What I Learned
+Active Directory depends heavily on correctly configured DNS, and
+domain authentication problems can originate from DNS rather than
+from Active Directory itself.
